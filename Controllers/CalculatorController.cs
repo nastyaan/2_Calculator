@@ -21,7 +21,7 @@ namespace _2_Calculator.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async IActionResult Calculate(double num1, double num2, Operation operation)
+        public async Task<IActionResult> Calculate(double num1, double num2, Operation operation)
         {
             double result = 0;
             switch (operation)
