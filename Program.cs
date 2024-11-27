@@ -1,3 +1,5 @@
+using _2_Calculator.Kafka;
+using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
 
 namespace _2_Calculator
@@ -14,6 +16,10 @@ namespace _2_Calculator
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddHostedService<KafkaConsumerService>();
+            builder.Services.AddSingleton<KafkaProducerHandler>();
+            builder.Services.AddSingleton<KafkaProducerService<Null, string>>();
 
             var app = builder.Build();
 

@@ -13,8 +13,20 @@ namespace _2_Calculator
 
         public double Num2 { get; set; }
         
-        public Operation Operation { get; set; }
+        public MathOperation Operation { get; set; }
 
         public double Result { get; set; }
+
+        public void CalculateOperation()
+        {
+            Result = Operation switch
+            {
+                MathOperation.Add => Num1 + Num2,
+                MathOperation.Subtract => Num1 - Num2,
+                MathOperation.Divide => Num1 / Num2,
+                MathOperation.Multiply => Num1 * Num2,
+                _ => throw new NotImplementedException()
+            };
+        }
     }
 }

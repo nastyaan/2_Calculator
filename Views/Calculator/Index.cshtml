@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<CalcModel>
+
+@{
     ViewData["Title"] = "Simple Calculator";
 }
 
@@ -17,6 +19,15 @@
     <input type="submit" value="Calculate" />
 </form>
 <span>Анисимова А.А. НМТ-413901</span>
+
+<div>
+    <h2>Предыдущие результаты</h2>
+    @foreach(var calc in Model)
+    {
+        <span>@calc.Num1 @calc.Operation @calc.Num2 = @calc.Result</span>
+        <br/>
+    }
+</div>
 
 @if (ViewBag.Result != null)
 {
