@@ -10,12 +10,12 @@
         stage('Build Docker Image') {
             steps {
                 sh 'ls -l'
-                sh 'docker compose -f 2_Сalculator/docker-compose.yml build'
+                sh 'docker compose build'
             }
         }
 		stage('Start Docker Container') {
             steps {
-                sh 'docker compose -f 2_Сalculator/docker-compose.yml up -d'
+                sh 'docker compose up -d'
             }
         }
     }
