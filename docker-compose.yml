@@ -1,0 +1,9 @@
+﻿﻿version: '3.7'
+
+services:     
+  web:
+    container_name: web-app-calculator-prometheus-02
+    hostname: app
+    build: ./
+    ports:
+      - "0.0.0.0:5102:5002"
